@@ -6,7 +6,7 @@ plt.style.use('seaborn')
 fig,ax = plt.subplots()
 
 
-ax.scatter(input_values,squares,s=10)
+ax.scatter(input_values,squares,c= squares,cmap=plt.cm.Blues,s=10) # c as an argument defines a specific color for the dot plot
 
 ax.set_title("Square Numbers", fontsize=24) # Sets the title of the chart with fontsize parameter describing the size of the font
 ax.set_xlabel("Value", fontsize=14)
@@ -19,3 +19,4 @@ ax.tick_params(axis='both', labelsize=14)# tick_params() method styles the tick 
 ax.axis([0,101,0,10001])
 
 plt.show()
+

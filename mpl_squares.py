@@ -1,10 +1,13 @@
 import matplotlib.pyplot as plt
 
-squares= [1,4,9,16,25]
+input_values = [1,2,3,4,5] #input data set
+squares= [1,4,9,16,25] #Output data set
+
+plt.style.use('seaborn') # There are a lot of in-built styles available that you can check using plt.style.available
 
 fig,ax = plt.subplots() # subplots() function can generate one or more plots in the same figure. The variable fig represents the entire figure whereas ax represents one plot in the figure
 
-ax.plot(squares, linewidth=3) # We use ax to plot the squares on the figure. Plot() method plots the graph in a meaningful way and linewidth parameter tells the thickness of the line
+ax.plot(input_values,squares, linewidth=3) # We use ax to plot the squares on the figure. Plot() method plots the graph in a meaningful way and linewidth parameter tells the thickness of the line
 
 # Set chart title and label axes
 

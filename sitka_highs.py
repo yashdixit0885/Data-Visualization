@@ -7,7 +7,7 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
-fname = 'Data Visualization\data\sitka_weather_07-2018_simple.csv'
+fname = 'Data Visualization\data\sitka_weather_2018_simple.csv'
 
 with open(fname) as f: # Opens the file and assigns it to the object f
     reader = csv.reader(f) # Contents of the file are read through the reader method and assigned as an object to the variable reader. We will access the contents through this object
@@ -37,7 +37,7 @@ with open(fname) as f: # Opens the file and assigns it to the object f
     fig,ax = plt.subplots() 
     ax.plot(dates,highs, c = 'red') 
     # Set chart title and label axes
-    ax.set_title("Daily High Temperatures, July 2018", fontsize=24) 
+    ax.set_title("Daily High Temperatures- 2018", fontsize=24) 
     ax.set_xlabel('', fontsize=14)
     fig.autofmt_xdate()
     ax.set_ylabel("Temperatures(F)", fontsize=16)

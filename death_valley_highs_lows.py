@@ -1,5 +1,3 @@
-
-
 import csv
 
 from datetime import datetime
@@ -7,7 +5,7 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
-fname = 'Data Visualization\data\sitka_weather_2018_simple.csv'
+fname = 'Data Visualization\data\death_valley_2018_simple.csv'
 
 with open(fname) as f: # Opens the file and assigns it to the object f
     reader = csv.reader(f) # Contents of the file are read through the reader method and assigned as an object to the variable reader. We will access the contents through this object
@@ -15,22 +13,26 @@ with open(fname) as f: # Opens the file and assigns it to the object f
     # print(header_row) # Displays the header data to understand how the data is structured
    
 # for index,column_header in enumerate(header_row): # enumerate() function returns both the index of each item and the value of each item as you loop through a list
-    # print(index,column_header)
-
-# Get dates and high temperatures from this file
+#     print(index,column_header)
 
     dates,highs,lows =[],[],[]
 
     for row in reader:
         current_date = datetime.strptime(row[2],'%Y-%m-%d')
-        high = int(row[5])
-        low = int(row[6])
-        highs.append(high)
-        dates.append(current_date)
-        lows.append(low)
+        try:
+
+            high = int(row[4])
+            low = int(row[5])
+        except ValueError:
+            print(f"Missing data on {current_date}")
+        else:
+
+            highs.append(high)
+            dates.append(current_date)
+            lows.append(low)
         # print(row) # Prints all the data in the CSV
 
-    print(highs)
+    
 
 # Plot high temperatures
 
